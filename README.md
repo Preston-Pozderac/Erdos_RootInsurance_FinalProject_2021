@@ -85,4 +85,6 @@ Using our results, we constructed the following bidding strategy. Again, since t
 
 [Future LP Optimal Strategy](Future_Determining_Optimal_Strategy.ipynb)
 
-For the future of this project, new data should be taken with varying bids in each demographic, focused on the largest growth potential customers. Our models will be able to determine the influence of bids on rank, clicks, and sales. Utilizing the package PuLP, a linear programming solver can find the exact configuration of strategies, one per demographic, that minimizes the cost while maintaining a minimum number of policies sold.
+For the future of this project, new data should be taken with varying bids in each demographic, focused on the largest growth potential customers. By varying the bid, say from $8-12 or $5-15, our models will be able to determine the influence of bids on rank, clicks, and sales. We can use a multi armed bandit approach to explore the effect of bid on ranking while exploiting the results to minimize cost and maximize policies.
+
+Utilizing the package PuLP, a linear programming (LP) solver can find the exact configuration of strategies, one per demographic, that minimizes the cost while maintaining a minimum number of policies sold. Given n strategies, the LP solver produces a 36 by n binary array where each row represents a demographic and column a strategy. In each row only one value is given a 1 to represent the chosen strategy.
