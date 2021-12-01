@@ -79,4 +79,6 @@ Using our results, we constructed the following bidding strategy. Again, since t
 
 ## Future Iterations
 
+[Future LP Optimal Strategy](Future_Determining_Optimal_Strategy.ipynb)
+
 For the future of this project, new data should be taken with varying bids in each demographic, focused on the largest growth potential customers. Our models will be able to determine the influence of bids on rank, clicks, and sales. Utilizing the package PuLP, a linear programming solver can find the exact configuration of strategies, one per demographic, that minimizes the cost while maintaining a minimum number of policies sold.
