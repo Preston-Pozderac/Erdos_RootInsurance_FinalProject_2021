@@ -2,7 +2,7 @@
 Repository for Erdos Institute Root Insurance Final Project 2021 Group Koala
 
 Group Members:
-Wendson Antonio de Sa Barbosa,
+Wendson Barbosa,
 Preston Pozderac,
 David Wen
 
