@@ -50,8 +50,12 @@ The rank model uses a random forest model and the features of "Insurance Status"
 ### Clicks Model
 [Clicks Model Link](Model%20-%20Clicks%2C%20Neural%20Network.ipynb)
 
+The click model takes the features "Insurance Status", "Number of Drivers", "Number of Vehicles", "Marital Status" and "Rank" and determines the probability of click. As the data is imbalances the area under the precision recall curve was used our performance metric for testing the models. Of all the models that were tested, the neural network model with 2 hidden layers performed the best with an average cross validation score of .462, which is more than double the baseline model score of .1876. While interpretability is lost with this choice of a neural network model, the importance of clicks in determining cost, as well as, the intention to use the outputted probability scores as features for the sales models motivates this choice.
+
 ### Sales Model
 [Sales Model Link](Model%20-%20Policies%20Sold%2C%20Logistic%20Regression.ipynb)
+
+The sales model takes the features "Insurance Status", "Number of Drivers", "Number of Vehicles", "Marital Status", "Rank" and "click probability" (obtained from the clicks model) and determines the probability of a sale. As with the clicks model, the data set for sales is also imbalanced and the area under the precision recall curve was used as our performance metric for testing the models. Of all the models that were tested, the Logistic Regression model performed the best with an average cross validation score of .208 which is more than double the baseline model score of .078. From the importance score, the most significant feature for the sales model was "Rank" (.81) and "click probability"(.66) and other significant features were "Insurance Status"(.45), "Number of Drivers"(.25), "Number of Vehicles"(.2) while "Marital Status" (.09) had marginal effects.
 
 ## Results
 
