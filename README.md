@@ -51,7 +51,7 @@ The rank model uses a random forest model and the features of "Insurance Status"
 [Clicks Model Link](Model%20-%20Clicks%2C%20Neural%20Network.ipynb)
 
 ### Sales Model
-[Sales](Model%20-%20Policies%20Sold%2C%20Logistic%20Regression.ipynb)
+[Sales Model Link](Model%20-%20Policies%20Sold%2C%20Logistic%20Regression.ipynb)
 
 ## Results
 
