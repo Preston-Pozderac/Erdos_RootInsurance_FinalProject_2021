@@ -55,6 +55,28 @@ The rank model uses a random forest model and the features of "Insurance Status"
 
 ## Results
 
+[Post Model Analysis](Post%Analysis.ipynb)
+
+In order to determine an optimal bidding strategy without the bid strategy, we determined metrics that made certain demographics more or less desirable. 
+
+-***Cost Efficiency***: By comparing the expected number of policies to the number of clicks (bid is paid out at click), we found which demographics were more cost efficient. Setting the policiy per click at 0.35, our models identified 22 customer demographics as cost efficient with at least 1 policy sold for approximately every 3 clicks. These fell primarily in the category of "Unknown" and "No" insurance status as well as the demographics with fewer vehicles.
+
+-***Potential Growth***: If we manipulate rank distribution, increasing each ranks or setting all ads to rank 1/2, we can determine the possible gains in sales. We find that the "No" insurance status typically have the highest gains in sales. This is due to their high policy sold per click and their initially low ranking. When the initial rankings are already 1/2, there is not as much room for growth as one starting with 4/5 rankings.
+
+-***Minimized Loss***: Similar to growth, if we decrease our ranks or set all ads to rank 5, we identify the demographics where savings can be extracted with minimal losses in policy sales. In this case, the "Yes" insured status customers have  few policies sold and a very low policies per click ratio. Decreasing the bids here have little impact on the policies sold while reducing the overall cost.
+
 ## Bidding Strategy
 
+[Bidding Strategy](Bidding%Strategies%Proposal.ipynb)
+
+Using our results, we constructed the following bidding strategy. Again, since the bid variable is constant, our models cannot predict the impact of specific increases/decreases in bid. Therefore we can only give general recommendations on how to change bidding
+
+-***Keep bids on “Unknown” insured customers fixed***: This would ensure that at least 500 sales per 10,0000 customers.
+
+-***Decrease bids on Insured customers***: Generally, insured customers have the lowest sales per click with some requiring 5 clicks before a policy is sold.
+
+-***Increase bids on Uninsured customers, especially those with a lower number of vehicles***: Generally, uninsured customers have high sales per click and have many not in rank 1 which implies there is a higher potential for gaining sales.
+
 ## Future Iterations
+
+For the future of this project, new data should be taken with varying bids in each demographic, focused on the largest growth potential customers. Our models will be able to determine the influence of bids on rank, clicks, and sales. Utilizing the package PuLP, a linear programming solver can find the exact configuration of strategies, one per demographic, that minimizes the cost while maintaining a minimum number of policies sold.
